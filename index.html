@@ -4,17 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elber Ribeiro — Senior Software Architect</title>
-  <meta name="description" content="Elber Ribeiro is a senior software architect based in Boca Raton, Florida. He shapes healthcare software at ModMed and builds cozy games on the side.">
+  <meta name="description" content="Senior software architect in Boca Raton, FL. Healthcare software at ModMed by day, cozy games by night.">
   <meta name="author" content="Elber Ribeiro">
-  <meta name="theme-color" content="#fdfcf9" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0c0e10">
 
   <meta property="og:title" content="Elber Ribeiro — Senior Software Architect">
   <meta property="og:description" content="Senior software architect in Boca Raton, FL. Healthcare software by day, cozy games by night.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dynaum.com/">
   <meta property="og:locale" content="en_US">
-
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@dynaum">
   <meta name="twitter:creator" content="@dynaum">
@@ -24,21 +22,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/styles.css">
-
-  <script>
-    // Inline to avoid FOUC. Read saved theme before paint.
-    (function () {
-      try {
-        var saved = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var theme = saved || (prefersDark ? 'dark' : 'light');
-        document.documentElement.dataset.theme = theme;
-      } catch (e) { /* localStorage may be unavailable */ }
-    })();
-  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -47,191 +33,338 @@
     <div class="container site-header__inner">
       <a class="brand" href="/" aria-label="Elber Ribeiro — home">
         <span class="brand__mark" aria-hidden="true">ER</span>
-        <span class="brand__name">Elber Ribeiro</span>
+        <span class="brand__prompt">elber<span class="dim">@</span>dynaum<span class="dim">:~$</span></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#connect">Connect</a>
+        <a href="#about"><span class="dim">cd </span>about</a>
+        <a href="#now"><span class="dim">cd </span>now</a>
+        <a href="#work"><span class="dim">cd </span>work</a>
+        <a href="#contact"><span class="dim">cd </span>contact</a>
       </nav>
-      <button
-        type="button"
-        class="theme-toggle"
-        id="theme-toggle"
-        aria-label="Switch to dark theme"
-        aria-pressed="false"
-      >
-        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-          <circle cx="12" cy="12" r="4" fill="currentColor"/>
-          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <line x1="12" y1="2"  x2="12" y2="5"/>
-            <line x1="12" y1="19" x2="12" y2="22"/>
-            <line x1="2"  y1="12" x2="5"  y2="12"/>
-            <line x1="19" y1="12" x2="22" y2="12"/>
-            <line x1="4.9" y1="4.9"   x2="7"    y2="7"/>
-            <line x1="17"  y1="17"    x2="19.1" y2="19.1"/>
-            <line x1="4.9" y1="19.1"  x2="7"    y2="17"/>
-            <line x1="17"  y1="7"     x2="19.1" y2="4.9"/>
-          </g>
-        </svg>
-        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
-          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/>
-        </svg>
-      </button>
+      <div class="site-status" aria-label="Status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-label">online</span>
+        <span class="dim sep">│</span>
+        <span class="muted">BOC · UTC−5</span>
+      </div>
     </div>
   </header>
 
   <main id="main">
 
+    <!-- Hero -->
     <section class="hero">
-      <div class="container">
-        <p class="eyebrow">Senior software architect · Boca Raton, FL</p>
-        <h1 class="hero__title">
-          Hi, I'm Elber. <br>
-          <span class="hero__title-accent">I build software that earns its keep.</span>
-        </h1>
-        <p class="hero__lede">
-          By day I work on healthcare software at <a href="https://www.modmed.com" rel="noopener">ModMed</a>.
-          By night I make cozy games and small experiments — usually one well-bounded thing at a time.
-        </p>
-        <div class="hero__ctas">
-          <a class="button button--primary" href="#projects">See what I'm building</a>
-          <a class="button button--ghost" href="mailto:elber@dynaum.com">Get in touch</a>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow eyebrow--accent">// architect.role · resident-of('boca raton, fl')</p>
+          <h1 class="hero__title">
+            I build software<br>
+            <span class="hero__title-mute">that earns</span>
+            <span class="hero__title-accent">its keep</span><span class="caret" aria-hidden="true">_</span>
+          </h1>
+          <p class="hero__lede">
+            Hi, I'm <strong>Elber</strong> — a senior architect shaping healthcare
+            software at <a href="https://www.modmed.com" rel="noopener">ModMed</a> by day,
+            and a quiet maker of cozy games on the side.
+          </p>
+          <div class="hero__ctas">
+            <a class="button button--primary" href="#work">
+              <span class="button__prompt">$ </span>see-work <span class="button__arrow">→</span>
+            </a>
+            <a class="button button--ghost" href="mailto:elber@dynaum.com">
+              <span class="dim">$ </span>mail elber@dynaum.com
+            </a>
+          </div>
         </div>
+
+        <!-- Terminal card -->
+        <aside class="terminal" aria-label="Terminal">
+          <div class="terminal__bar">
+            <span class="terminal__dot terminal__dot--r"></span>
+            <span class="terminal__dot terminal__dot--y"></span>
+            <span class="terminal__dot terminal__dot--g"></span>
+            <span class="terminal__title">~/dynaum — zsh</span>
+          </div>
+          <div class="terminal__body">
+            <div class="line"><span class="t-user">elber</span><span class="dim"> ~/ </span><span class="t-prompt">$</span> whoami</div>
+            <div class="line out">elber ribeiro · senior software architect</div>
+
+            <div class="line spaced"><span class="t-user">elber</span><span class="dim"> ~/ </span><span class="t-prompt">$</span> stack --json</div>
+            <div class="line out">
+              <span class="dim">{</span><br>
+              &nbsp;&nbsp;<span class="t-key">"day"</span>: <span class="t-str">"ruby, elixir, go, ts"</span>,<br>
+              &nbsp;&nbsp;<span class="t-key">"night"</span>: <span class="t-str">"gdscript, godot 4"</span>,<br>
+              &nbsp;&nbsp;<span class="t-key">"shipping_since"</span>: <span class="t-num">2009</span><br>
+              <span class="dim">}</span>
+            </div>
+
+            <div class="line spaced"><span class="t-user">elber</span><span class="dim"> ~/ </span><span class="t-prompt">$</span> ls projects/</div>
+            <div class="line out">
+              <span class="t-prompt">lanterns/</span> &nbsp; sudoku/ &nbsp; us-visa/ &nbsp; dns/
+            </div>
+
+            <div class="line spaced">
+              <span class="t-user">elber</span><span class="dim"> ~/ </span>
+              <span class="t-prompt">$</span> <span class="caret block" aria-hidden="true">▍</span>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
+    <!-- Featured: Lanterns -->
+    <section class="section section--featured" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="rule-row">
+          <span class="rule-row__bullet">▸</span>
+          <span class="rule-row__label">Featured ── Lanterns</span>
+          <span class="rule-row__line"></span>
+          <span class="rule-row__meta">currently shipping</span>
+        </div>
+
+        <article class="featured glow-card reveal">
+          <div class="featured__copy">
+            <p class="eyebrow eyebrow--amber">◌ in_dev · godot_4 · v0.4-alpha</p>
+            <h2 id="featured-heading" class="featured__title">Lanterns</h2>
+            <p class="featured__tagline">A cozy bullet-heaven held together by light.</p>
+            <p class="featured__body">
+              You play the Keeper. A swarm of moths follows you through a sleeping forest —
+              the lanterns you light keep the night gentle, and the night, in turn, keeps the moths.
+              1–2 players, local co-op. Browser demo available.
+            </p>
+            <dl class="featured__meta">
+              <div><dt>engine</dt><dd>godot 4 · gdscript</dd></div>
+              <div><dt>players</dt><dd>1–2 local co-op</dd></div>
+              <div><dt>started</dt><dd>2024</dd></div>
+              <div><dt>build</dt><dd class="green">● passing · v0.4.2</dd></div>
+            </dl>
+            <div class="featured__ctas">
+              <a class="button button--amber" href="https://lanterns.dynaum.com" rel="noopener">play demo →</a>
+              <a class="button button--ghost button--small" href="https://lanterns.dynaum.com" rel="noopener">devlog</a>
+            </div>
+          </div>
+          <div class="featured__art" aria-hidden="true">
+<pre class="ascii">        .  *    .       *    .   *
+   *   .       .    *      .       *
+              ◯
+             /│\           moths
+   .  .   . / │ \  .       *  .
+            ╱  │  ╲
+           /   │   \
+          /  ┌─┴─┐  \
+   *     /   │ ✦ │   \      .
+        /    └───┘    \
+   .   ╱──────│──────╲   *
+       ▒▒▒▒▒▒▒│▒▒▒▒▒▒▒
+       ░░░░░░░│░░░░░░░     forest
+   *   ░░░░░░░│░░░░░░░  .     floor
+       ─────────────────</pre>
+            <div class="featured__art-glow"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
     <section id="about" class="section" aria-labelledby="about-heading">
-      <div class="container container--narrow">
-        <p class="section__eyebrow">About</p>
-        <h2 id="about-heading" class="section__title">A long-time builder, still curious.</h2>
-        <div class="prose">
-          <p>
-            I've been writing software for a living since the days when "deploying" meant SCP and a prayer.
-            On <a href="https://github.com/dynaum" rel="noopener">GitHub since 2009</a>, I've shipped production
-            code in Ruby, Elixir, Go, TypeScript, and — most recently — GDScript.
-          </p>
-          <p>
-            What I care about hasn't really changed: clear boundaries between things, code that's kind to
-            the next person, and tools that get out of your way. Lately that's also meant exploring how
-            AI changes the way we plan, write, and review software — running the same prompt through
-            different models to see how they think.
-          </p>
-          <p>
-            Outside of work, I'm slowly building <a href="https://lanterns.dynaum.com" rel="noopener">Lanterns</a>,
-            a cozy game in Godot 4, and a couple of smaller things you'll find below.
-          </p>
+      <div class="container">
+        <div class="rule-row">
+          <span class="rule-row__bullet">▸</span>
+          <span class="rule-row__label">cat /about.md</span>
+          <span class="rule-row__line"></span>
+        </div>
+        <div class="about-grid reveal">
+          <h2 id="about-heading" class="section__title">A long-time builder, still curious.</h2>
+          <div class="prose">
+            <p>
+              I've been writing software for a living since the days when "deploying" meant SCP and a prayer.
+              On <a href="https://github.com/dynaum" rel="noopener">GitHub since 2009</a>, I've shipped production
+              code in Ruby, Elixir, Go, TypeScript, and — most recently — GDScript.
+            </p>
+            <p>
+              What I care about hasn't really changed: clear boundaries between things, code that's kind to
+              the next person, and tools that get out of your way. Lately that's also meant exploring how
+              AI changes the way we plan, write, and review software — running the same prompt through
+              different models to see how they think.
+            </p>
+            <p>
+              Outside of work, I'm slowly building <a href="https://lanterns.dynaum.com" rel="noopener">Lanterns</a>,
+              a cozy game in Godot 4, and a couple of smaller things you'll find below.
+            </p>
+            <div class="stack-row">
+              <span class="dim">// stack</span>
+              <span class="t-prompt">Ruby</span><span class="dim">∙</span>
+              <span class="t-prompt">Elixir</span><span class="dim">∙</span>
+              <span class="t-prompt">Go</span><span class="dim">∙</span>
+              <span class="t-prompt">TypeScript</span><span class="dim">∙</span>
+              <span class="t-prompt">GDScript</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section section--alt" aria-labelledby="projects-heading">
+    <!-- Now -->
+    <section id="now" class="section" aria-labelledby="now-heading">
       <div class="container">
-        <p class="section__eyebrow">Selected work</p>
-        <h2 id="projects-heading" class="section__title">Projects</h2>
-
-        <ul class="project-grid" role="list">
-
-          <li class="project-card">
-            <article>
-              <header class="project-card__header">
-                <h3 class="project-card__title">
-                  <a href="https://lanterns.dynaum.com" rel="noopener">Lanterns</a>
-                </h3>
-                <p class="project-card__meta">
-                  <span class="tag">Godot 4</span>
-                  <span class="tag">In development</span>
-                </p>
-              </header>
-              <p class="project-card__body">
-                A cozy bullet-heaven about a Keeper, a swarm of moths, and the soft light that holds the
-                night together. 1–2 players, local co-op. Browser demo available.
-              </p>
-              <p class="project-card__links">
-                <a href="https://lanterns.dynaum.com" rel="noopener">lanterns.dynaum.com <span aria-hidden="true">→</span></a>
-              </p>
-            </article>
+        <div class="rule-row">
+          <span class="rule-row__bullet">▸</span>
+          <span class="rule-row__label" id="now-heading">uptime --now</span>
+          <span class="rule-row__line"></span>
+          <span class="rule-row__meta">updated this week</span>
+        </div>
+        <ul class="now-grid reveal" role="list">
+          <li class="now-card glow-card">
+            <p class="now-card__label">▸ Building</p>
+            <p class="now-card__value">Lanterns — v0.4 milestone</p>
           </li>
+          <li class="now-card glow-card">
+            <p class="now-card__label">▸ Reading</p>
+            <p class="now-card__value">"A Philosophy of Software Design", again</p>
+          </li>
+          <li class="now-card glow-card">
+            <p class="now-card__label">▸ Tinkering</p>
+            <p class="now-card__value">Multi-model code review pipelines</p>
+          </li>
+          <li class="now-card glow-card">
+            <p class="now-card__label">▸ Listening</p>
+            <p class="now-card__value">Mostly ambient, mostly quiet</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-          <li class="project-card">
-            <article>
-              <header class="project-card__header">
-                <h3 class="project-card__title">
-                  <a href="https://dynaum.github.io/sudoku/" rel="noopener">Sudoku — three models, one game</a>
-                </h3>
-                <p class="project-card__meta">
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">Experiment</span>
-                </p>
-              </header>
-              <p class="project-card__body">
+    <!-- Work -->
+    <section id="work" class="section" aria-labelledby="work-heading">
+      <div class="container">
+        <div class="rule-row">
+          <span class="rule-row__bullet">▸</span>
+          <span class="rule-row__label" id="work-heading">ls -la work/</span>
+          <span class="rule-row__line"></span>
+          <span class="rule-row__meta">3 entries</span>
+        </div>
+
+        <div class="work-list">
+
+          <article class="work-row reveal">
+            <div class="work-row__index">
+              <span class="work-row__n">01</span>
+              <span class="work-row__year">2025</span>
+            </div>
+            <div class="work-row__body">
+              <h3 class="work-row__title">
+                <a href="https://dynaum.github.io/sudoku/" rel="noopener">Sudoku — three models, one game</a>
+              </h3>
+              <p class="work-row__lede">
                 The same prompt — "build a fancy, responsive Sudoku" — given to Claude Opus, Sonnet, and Haiku.
                 Three independent takes, plus the timing and token data behind each run.
               </p>
-              <p class="project-card__links">
-                <a href="https://dynaum.github.io/sudoku/" rel="noopener">Play the three versions <span aria-hidden="true">→</span></a>
-                <a href="https://github.com/dynaum/sudoku" rel="noopener">Source <span aria-hidden="true">→</span></a>
+              <p class="work-row__links">
+                <a href="https://dynaum.github.io/sudoku/" rel="noopener">./play →</a>
+                <a href="https://github.com/dynaum/sudoku" rel="noopener">./source →</a>
               </p>
-            </article>
-          </li>
+            </div>
+            <div class="work-row__tags">
+              <span class="tag-pill">javascript</span>
+              <span class="tag-pill">ai experiment</span>
+            </div>
+          </article>
 
-          <li class="project-card">
-            <article>
-              <header class="project-card__header">
-                <h3 class="project-card__title">
-                  <a href="https://dynaum.github.io/us-visa/" rel="noopener">US Visa Guide</a>
-                </h3>
-                <p class="project-card__meta">
-                  <span class="tag">Next.js</span>
-                  <span class="tag">i18n</span>
-                </p>
-              </header>
-              <p class="project-card__body">
+          <article class="work-row reveal">
+            <div class="work-row__index">
+              <span class="work-row__n">02</span>
+              <span class="work-row__year">2024</span>
+            </div>
+            <div class="work-row__body">
+              <h3 class="work-row__title">
+                <a href="https://dynaum.github.io/us-visa/" rel="noopener">US Visa Guide</a>
+              </h3>
+              <p class="work-row__lede">
                 A bilingual step-by-step companion for first-time B1/B2 tourist-visa applicants in Brazil.
                 No backend, no tracking — your progress stays in your browser.
               </p>
-              <p class="project-card__links">
-                <a href="https://dynaum.github.io/us-visa/" rel="noopener">Open the guide <span aria-hidden="true">→</span></a>
-                <a href="https://github.com/dynaum/us-visa" rel="noopener">Source <span aria-hidden="true">→</span></a>
+              <p class="work-row__links">
+                <a href="https://dynaum.github.io/us-visa/" rel="noopener">./open-guide →</a>
+                <a href="https://github.com/dynaum/us-visa" rel="noopener">./source →</a>
               </p>
-            </article>
-          </li>
+            </div>
+            <div class="work-row__tags">
+              <span class="tag-pill">next.js</span>
+              <span class="tag-pill">i18n</span>
+            </div>
+          </article>
 
-        </ul>
+          <article class="work-row reveal">
+            <div class="work-row__index">
+              <span class="work-row__n">03</span>
+              <span class="work-row__year">2023</span>
+            </div>
+            <div class="work-row__body">
+              <h3 class="work-row__title">
+                <a href="https://github.com/dynaum/digitalocean-dns" rel="noopener">digitalocean-dns</a>
+              </h3>
+              <p class="work-row__lede">
+                Terraform module that manages apex DNS records on DigitalOcean for a handful of personal
+                domains — including this one.
+              </p>
+              <p class="work-row__links">
+                <a href="https://github.com/dynaum/digitalocean-dns" rel="noopener">./source →</a>
+              </p>
+            </div>
+            <div class="work-row__tags">
+              <span class="tag-pill">terraform</span>
+              <span class="tag-pill">infra</span>
+            </div>
+          </article>
+
+        </div>
 
         <p class="section__footnote">
-          More on <a href="https://github.com/dynaum" rel="noopener">github.com/dynaum</a>.
+          more on <a href="https://github.com/dynaum" rel="noopener">github.com/dynaum</a> →
         </p>
       </div>
     </section>
 
-    <section id="connect" class="section" aria-labelledby="connect-heading">
-      <div class="container container--narrow">
-        <p class="section__eyebrow">Connect</p>
-        <h2 id="connect-heading" class="section__title">Say hello.</h2>
-        <p class="prose">
-          I'm always happy to hear from people building thoughtful things — drop a line, or find me in the usual places.
-        </p>
-        <ul class="link-list" role="list">
-          <li>
-            <a href="mailto:elber@dynaum.com">
-              <span class="link-list__label">Email</span>
-              <span class="link-list__value">elber@dynaum.com</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/dynaum" rel="noopener">
-              <span class="link-list__label">GitHub</span>
-              <span class="link-list__value">@dynaum</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/dynaum" rel="noopener">
-              <span class="link-list__label">X / Twitter</span>
-              <span class="link-list__value">@dynaum</span>
-            </a>
-          </li>
-        </ul>
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="rule-row">
+          <span class="rule-row__bullet">▸</span>
+          <span class="rule-row__label" id="contact-heading">echo "hi"</span>
+          <span class="rule-row__line"></span>
+        </div>
+
+        <div class="contact glow-card reveal">
+          <div class="contact__copy">
+            <h2 class="contact__title"><span class="t-prompt">$</span> say-hello</h2>
+            <p class="contact__lede">
+              I'm always happy to hear from people building thoughtful things — drop a line, or find me in the usual places.
+            </p>
+          </div>
+          <ul class="contact__links" role="list">
+            <li>
+              <a href="mailto:elber@dynaum.com">
+                <span class="contact__k">mailto</span>
+                <span class="contact__v">elber@dynaum.com</span>
+                <span class="contact__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/dynaum" rel="noopener">
+                <span class="contact__k">github</span>
+                <span class="contact__v">@dynaum</span>
+                <span class="contact__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/dynaum" rel="noopener">
+                <span class="contact__k">twitter</span>
+                <span class="contact__v">@dynaum</span>
+                <span class="contact__arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -239,10 +372,8 @@
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <p>© <span id="year">2026</span> Elber Ribeiro. Built in plain HTML &amp; CSS.</p>
-      <p>
-        <a href="#main">Back to top</a>
-      </p>
+      <p>// © <span id="year">2026</span> elber ribeiro · all rights reversed (sometimes)</p>
+      <p>built in vim &amp; deployed on a thursday — <a href="#main">^ back to top</a></p>
     </div>
   </footer>
 

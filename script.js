@@ -1,44 +1,12 @@
 (function () {
   'use strict';
 
-  var root = document.documentElement;
-  var toggle = document.getElementById('theme-toggle');
-  var header = document.querySelector('.site-header');
+  // ── Year stamp ──────────────────────────────────────────────────────────
   var year = document.getElementById('year');
-
   if (year) year.textContent = String(new Date().getFullYear());
 
-  function applyTheme(theme) {
-    root.dataset.theme = theme;
-    if (toggle) {
-      var nextLabel = theme === 'dark'
-        ? 'Switch to light theme'
-        : 'Switch to dark theme';
-      toggle.setAttribute('aria-label', nextLabel);
-      toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-    }
-    var meta = document.querySelector('meta[name="theme-color"]:not([media])');
-    if (meta) meta.setAttribute('content', theme === 'dark' ? '#0a0a0a' : '#fdfcf9');
-  }
-
-  if (toggle) {
-    applyTheme(root.dataset.theme || 'light');
-    toggle.addEventListener('click', function () {
-      var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
-    });
-  }
-
-  var media = window.matchMedia('(prefers-color-scheme: dark)');
-  if (media.addEventListener) {
-    media.addEventListener('change', function (e) {
-      var saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (err) {}
-      if (!saved) applyTheme(e.matches ? 'dark' : 'light');
-    });
-  }
-
+  // ── Sticky header gets a hairline once you scroll past the top ─────────
+  var header = document.querySelector('.site-header');
   if (header) {
     var onScroll = function () {
       if (window.scrollY > 8) header.classList.add('is-scrolled');
@@ -46,5 +14,33 @@
     };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // ── Scroll-triggered reveals ───────────────────────────────────────────
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // ── Cursor-aware accent on .glow-card ──────────────────────────────────
+  // Skip on coarse pointers (touch) — there's no hover.
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.addEventListener('mousemove', function (e) {
+      var card = e.target && e.target.closest && e.target.closest('.glow-card');
+      if (!card) return;
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
   }
 })();
